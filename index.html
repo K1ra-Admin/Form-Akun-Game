@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form Isi Akun</title>
+</head>
+<body>
+  <h2>Form Isi Akun</h2>
+  <form id="submitForm">
+    <label>ID:</label><br>
+    <input type="text" id="id" required><br><br>
+
+    <label>Kode Reff:</label><br>
+    <input type="text" id="reff" required><br><br>
+
+    <label>Catatan (bebas):</label><br>
+    <textarea id="catatan" rows="6" style="width:100%;" required></textarea><br><br>
+
+    <button type="submit">Kirim</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById('submitForm');
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = {
+        id: document.getElementById('id').value.trim(),
+        reff: document.getElementById('reff').value.trim(),
+        catatan: document.getElementById('catatan').value.trim()
+      };
+
+      const res = await fetch("PASTE_WEB_APP_URL_HERE?type=submit", {
+        method: "POST",
+        body: JSON.stringify(data)
+      });
+      const text = await res.text();
+      document.getElementById("result").innerText = text;
+    });
+  </script>
+</body>
+</html>
