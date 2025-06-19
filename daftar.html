@@ -28,7 +28,7 @@
         reff: document.getElementById('reff').value.trim()
       };
 
-      const res = await fetch("PASTE_WEB_APP_URL_HERE?type=register", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbxZhOeDGJ-R6gyflmTxfTuvwUhgXwrwAuOTNXlEcfjKQBU2SIwaJ_j9qSiWRUaCCTua/exec?type=register", {
         method: "POST",
         body: JSON.stringify(data)
       });

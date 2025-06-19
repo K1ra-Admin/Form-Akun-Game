@@ -26,7 +26,7 @@
       const id = document.getElementById('id').value.trim();
       const reff = document.getElementById('reff').value.trim();
 
-      const res = await fetch(`PASTE_WEB_APP_URL_HERE?type=check&id=${id}&reff=${reff}`);
+      const res = await fetch(`https://script.google.com/macros/s/AKfycbxZhOeDGJ-R6gyflmTxfTuvwUhgXwrwAuOTNXlEcfjKQBU2SIwaJ_j9qSiWRUaCCTua/exec?type=check&id=${id}&reff=${reff}`);
       const data = await res.json();
       const resultDiv = document.getElementById("results");
       if (data.length === 0) {
